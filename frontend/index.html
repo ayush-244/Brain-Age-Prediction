@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuroAge XAI – Brain Age Prediction System</title>
+    <meta
+      name="description"
+      content="Clinical-grade dashboard for brain age prediction using CNN, Vision Transformer (ViT), and Grad-CAM explainability."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Initialize theme BEFORE React renders (prevents flash/flicker)
+      (function() {
+        try {
+          const THEME_STORAGE_KEY = "theme";
+          const saved = localStorage.getItem(THEME_STORAGE_KEY);
+          const theme = saved || "light"; // Default to light
+          
+          const root = document.documentElement;
+          
+          // Only apply "dark" class (Tailwind only recognizes this)
+          if (theme === "dark") {
+            root.classList.add("dark");
+          } else {
+            root.classList.remove("dark");
+          }
+          
+          console.log(`[Init] Applied theme: ${theme} | dark class:`, root.classList.contains("dark"));
+        } catch (e) {
+          console.error("[Init] Theme initialization error:", e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
