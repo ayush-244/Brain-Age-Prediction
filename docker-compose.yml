@@ -52,3 +52,5 @@ volumes:
 #
 # volumes:
 #   postgres_data:
+
+# Ensure ports are not conflicting
