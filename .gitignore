@@ -130,3 +130,5 @@ uploads/
 predictions.json
 test_results.txt
 _docs
+.vscode/
+.idea/
